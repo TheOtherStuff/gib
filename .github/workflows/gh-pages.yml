@@ -13,6 +13,8 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 9.0.x
+    - name: .NET WASM Workload
+      run: dotnet workload install wasm-tools
     - name: Publish with dotnet
       run: dotnet publish ./src/GIB --configuration Release --output build
     - name: Deploy to Github Pages
